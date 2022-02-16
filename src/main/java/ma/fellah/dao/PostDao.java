@@ -9,7 +9,7 @@ public interface PostDao {
 
     int updatePost(Post post);
 
-    int deletePost(int id);
+    void deletePost(int id);
 
     Post getPostById(int id);
 

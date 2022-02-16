@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <jsp:include page="WEB-INF/header.jsp" />
 
 <jsp:include page="WEB-INF/navbar.jsp" />
@@ -19,7 +21,14 @@
             <!-- ========== GRID START ============-->
             <div class="w-full sm:w-10/12 md:w-6/12 lg:w-12/12 h-12/12">
                 <div class="grid_offer text-center mt-8 mx-3">
-                    <img src="assets/img/1.jpg" class="w-full h-full"  width="50px" height="80px" alt="">
+                    <c:choose>
+                        <c:when test="${ requestScope.post.picture != null }">
+                            <img src="http://localhost/${ requestScope.post.picture }" class="w-full h-full"  width="50px" height="80px" alt="">
+                        </c:when>
+                        <c:otherwise>
+                            <img src="assets/img/1.jpg" class="w-full h-full"  width="50px" height="80px" alt="">
+                        </c:otherwise>
+                    </c:choose>
                     <h2 class="my-6 text-2xl font-semibold text-gray-700 capitalize">${ requestScope.post.offerName }</h2>
                     <!-- General elements -->
                     <div class="justify-left text-left">

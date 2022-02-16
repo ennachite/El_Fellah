@@ -71,21 +71,18 @@ public class PostDaoImpl implements PostDao{
     }
 
     @Override
-    public int deletePost(int id) {
+    public void deletePost(int id) {
         try {
             preparedStatement = connection.prepareStatement("DELETE FROM posts WHERE id=?");
             preparedStatement.setInt(1, id);
 
             if (preparedStatement.executeUpdate() > 0){
-                return 1;
             } else {
-                return 0;
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-        return -1;
     }
 
     @Override
