@@ -3,7 +3,7 @@ package ma.fellah.model;
 public class Post {
     private int id;
     private String offerName, description, ownerName, phone, location, date, picture;
-    private float area, price;
+    private int area, price;
 
     public int getId() {
         return id;
@@ -69,19 +69,19 @@ public class Post {
         this.picture = picture;
     }
 
-    public float getArea() {
+    public int getArea() {
         return area;
     }
 
-    public void setArea(float area) {
+    public void setArea(int area) {
         this.area = area;
     }
 
-    public float getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(float price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 }

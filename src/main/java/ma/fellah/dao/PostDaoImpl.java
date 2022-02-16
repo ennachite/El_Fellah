@@ -45,8 +45,8 @@ public class PostDaoImpl implements PostDao{
         preparedStatement.setString(2, post.getDescription());
         preparedStatement.setString(3, post.getOwnerName());
         preparedStatement.setString(4, post.getPhone());
-        preparedStatement.setFloat(5, post.getArea());
-        preparedStatement.setFloat(6, post.getPrice());
+        preparedStatement.setInt(5, post.getArea());
+        preparedStatement.setInt(6, post.getPrice());
         preparedStatement.setString(7, post.getLocation());
     }
 
@@ -137,8 +137,8 @@ public class PostDaoImpl implements PostDao{
         post.setDescription(resultSet.getString("description"));
         post.setOwnerName(resultSet.getString("owner_name"));
         post.setPhone(resultSet.getString("phone"));
-        post.setArea(resultSet.getFloat("area"));
-        post.setPrice(resultSet.getFloat("price"));
+        post.setArea(resultSet.getInt("area"));
+        post.setPrice(resultSet.getInt("price"));
         post.setLocation(resultSet.getString("location"));
         post.setDate(String.valueOf(resultSet.getDate("creation_date")));
         post.setPicture(resultSet.getString("pic_url"));

@@ -36,23 +36,22 @@
 
                             <label class="block text-sm my-4">
                                 <span class="text-black">Owner phone number</span>
-                                <input name="phone" class="block w-full mt-1 h-8 text-sm pl-2 focus:border-green-600  focus:border-2 border-2 border-gray-400 rounded-md form-input" type="tel" placeholder="Phone number"/>
+                                <input name="phone" class="block w-full mt-1 h-8 text-sm pl-2 focus:border-green-600  focus:border-2 border-2 border-gray-400 rounded-md form-input" type="text" placeholder="Phone number"/>
                             </label>
 
                             <label class="block text-sm my-4">
                                 <span class="text-black">Area (Hectare)</span>
-                                <input name="area" class="block w-full mt-1 h-8 text-sm pl-2 focus:border-green-600  focus:border-2 border-2 border-gray-400 rounded-md form-input" type="number" min="0" placeholder="Ex: 1000 m2"/>
+                                <input name="surface" class="block w-full mt-1 h-8 text-sm pl-2 focus:border-green-600  focus:border-2 border-2 border-gray-400 rounded-md form-input" type="number" placeholder="Ex: 10"/>
                             </label>
 
                             <label class="block text-sm my-4">
                                 <span class="text-black">Price/Hectare (MAD)</span>
-                                <input name="price" class="block w-full mt-1 h-8 text-sm pl-2 focus:border-green-600  focus:border-2 border-2 border-gray-400 rounded-md form-input" type="number" min="0" placeholder="Ex: 10000"
-                                />
+                                <input name="price" class="block w-full mt-1 h-8 text-sm pl-2 focus:border-green-600  focus:border-2 border-2 border-gray-400 rounded-md form-input" type="number" placeholder="Ex: 100000"/>
                             </label>
 
                             <label class="block text-sm my-4">
                                 <span class="text-black">Location</span>
-                                <input name="location" class="block w-full mt-1 h-8 text-sm pl-2 focus:border-green-600  focus:border-2 border-2 border-gray-400 rounded-md form-input" type = "text" placeholder="Country,City"/>
+                                <input name="location" class="block w-full mt-1 h-8 text-sm pl-2 focus:border-green-600  focus:border-2 border-2 border-gray-400 rounded-md form-input" type="text" placeholder="Country,City"/>
                             </label>
 
                             <label class="block mt-4 text-sm">
@@ -71,7 +70,7 @@
 
                             </div>
 
-                            <a class="flex items-center justify-center p-4 mb-8 text-sm font-semibold text-white bg-green-700 rounded-lg shadow-md focus:outline-none mt-3" href="index.html">
+                            <a class="flex items-center justify-center p-4 mb-8 text-sm font-semibold text-white bg-green-700 rounded-lg shadow-md focus:outline-none mt-3">
                                 <button type="submit">Submit</button>
                                 <div class="flex items-center">
                                     <span></span>

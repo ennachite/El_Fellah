@@ -51,7 +51,7 @@
                     <h4 class="mt-8 lg:mr-8">Sale of agricultural land in Morocco</h4>
                     <div class="hero-btn mt-10">
                         <a href="#">
-                            <button type="button" class="main-btn" onclick="window.location.href='addOffer.html'">New Offer</button>
+                            <button type="button" class="main-btn" onclick="window.location.href='/add-post'">New Offer</button>
                         </a>
                     </div>
                 </div>
@@ -95,7 +95,7 @@
                 <div class="single_services text-center pb-5">
                     <c:choose>
                         <c:when test="${ post.picture != null }">
-
+                            <img src="http://localhost/${ post.picture }" class="w-full h-full"  width="50px" height="80px" alt="">
                         </c:when>
                         <c:otherwise>
                             <img src="assets/img/1.jpg" class="w-full h-full"  width="50px" height="80px" alt="">
