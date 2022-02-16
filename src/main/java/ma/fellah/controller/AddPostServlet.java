@@ -4,15 +4,30 @@ import ma.fellah.dao.PostDaoImpl;
 import ma.fellah.extra.HomePath;
 import ma.fellah.model.Post;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 import java.io.File;
 import java.io.IOException;
 
 @MultipartConfig
 @WebServlet(name = "AddPost", value = "/add-post")
 public class AddPostServlet extends HttpServlet {
+    protected static String extractFileName(Part part) {
+        String contentDispo = part.getHeader("content-disposition");
+        String[] items = contentDispo.split(";");
+        for (String s : items) {
+            if (s.trim().startsWith("filename")) {
+                return s.substring(s.indexOf("=") + 2, s.length() - 1);
+            }
+        }
+        return "";
+    }
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("addOffer.jsp").forward(request, response);
@@ -62,16 +77,5 @@ public class AddPostServlet extends HttpServlet {
         } else {
             response.sendRedirect("/home");
         }
-    }
-
-    protected static String extractFileName(Part part) {
-        String contentDispo = part.getHeader("content-disposition");
-        String[] items = contentDispo.split(";");
-        for (String s : items) {
-            if (s.trim().startsWith("filename")) {
-                return s.substring(s.indexOf("=") + 2, s.length() - 1);
-            }
-        }
-        return "";
     }
 }

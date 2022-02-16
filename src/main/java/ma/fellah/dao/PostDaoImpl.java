@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PostDaoImpl implements PostDao{
+public class PostDaoImpl implements PostDao {
     private final Connection connection;
     private PreparedStatement preparedStatement;
     private ResultSet resultSet;
@@ -76,7 +76,7 @@ public class PostDaoImpl implements PostDao{
             preparedStatement = connection.prepareStatement("DELETE FROM posts WHERE id=?");
             preparedStatement.setInt(1, id);
 
-            if (preparedStatement.executeUpdate() > 0){
+            if (preparedStatement.executeUpdate() > 0) {
             } else {
             }
         } catch (SQLException e) {
@@ -93,7 +93,7 @@ public class PostDaoImpl implements PostDao{
 
             resultSet = preparedStatement.executeQuery();
 
-            if (resultSet.next()){
+            if (resultSet.next()) {
                 return getPost();
             } else {
                 return null;
@@ -114,7 +114,7 @@ public class PostDaoImpl implements PostDao{
 
             resultSet = preparedStatement.executeQuery();
 
-            while (resultSet.next()){
+            while (resultSet.next()) {
                 Post post = getPost();
                 posts.add(post);
             }
